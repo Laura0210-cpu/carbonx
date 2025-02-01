@@ -24,7 +24,7 @@ const Login = () => {
         alert('Login successful!');
 
         // Redirect to the protected page
-        navigate('/protected');
+        navigate('/appwelcome');
       }
     } catch (error) {
       console.error(error);

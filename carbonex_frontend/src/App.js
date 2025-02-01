@@ -7,12 +7,14 @@ import Entreprise from './pages/Entreprise';
 import SignUpPage from './pages/SignUpPage';
 import Login from './pages/Login'; 
 import ProtectedPage from './components/ProtectedPage';
+import AppWelcome from './pages/AppWelcome.js';
+
 
 function App() {
   const location = useLocation();
 
   // Define routes where the Navbar should not be shown
-  const noNavbarRoutes = [ '/protected'];
+  const noNavbarRoutes = [ '/protected', '/appwelcome'];
 
   // Check if the current route is in the list of noNavbarRoutes
   const hideNavbar = noNavbarRoutes.includes(location.pathname);
@@ -27,6 +29,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/protected" element={<ProtectedPage />} />
+        <Route path="/appwelcome" element={<AppWelcome />} />
       </Routes>
     </>
   );

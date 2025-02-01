@@ -14,7 +14,7 @@ const Navbar = () => {
     },
     logo: {
       display: 'flex',
-      fontSize: '1.5rem',
+      fontSize: '1.75rem',
       fontWeight: 'bold',
       color: '#213D30', // Purple color
       textDecoration: 'none',
@@ -78,7 +78,7 @@ const Navbar = () => {
       <img
         src="/Logo.png"
         alt="Logo"
-        style={{ height: '100px', marginRight: '10px' }}
+        style={{ height: '130px', marginRight: '10px' }}
       />
       <Link to="/" style={styles.logo}>
         <span>CarbonX</span>
