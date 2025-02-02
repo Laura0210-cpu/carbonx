@@ -16,7 +16,7 @@ const Navbar = () => {
       display: 'flex',
       fontSize: '1.75rem',
       fontWeight: 'bold',
-      color: '#213D30', // Purple color
+      color: '#213D30', // Green Color
       textDecoration: 'none',
       alignItems: 'center', 
       marginRight: 'auto', 
@@ -34,7 +34,7 @@ const Navbar = () => {
       transition: 'color 0.3s ease',
     },
     navLinkHover: {
-      color: '#213D30', // Purple on hover
+      color: '#213D30', // Green Color
     },
     buttonGroup: {
       display: 'flex',
