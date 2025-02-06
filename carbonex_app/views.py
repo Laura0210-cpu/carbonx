@@ -1,6 +1,10 @@
 from django.contrib.auth import authenticate, get_user_model
+from .models import Project
+from .serializers import ProjectSerializer
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404
+
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -71,3 +75,21 @@ def protected_view(request):
     header to access.
     """
     return Response({"message": "Welcome! You have access to the protected page."})
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_projects(request):
+    projects = Project.objects.all()
+    serializer = ProjectSerializer(projects, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_project_details(request, project_id):
+    """
+    API View to return details of a single project by UUID.
+    """
+    project = get_object_or_404(Project, id=project_id)  # Fetch the project by UUID
+    serializer = ProjectSerializer(project)
+    return Response(serializer.data)

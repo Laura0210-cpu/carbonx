@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const styles = {
     navbar: {
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center', 
-      padding: '1rem 5%',
-      backgroundColor: '#fff',
-      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-      fontFamily: "'Inter', sans-serif",
-    },
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '0.5rem 5%', // ✅ Reduced padding to make it thinner
+        backgroundColor: '#fff',
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+        fontFamily: "'Inter', sans-serif",
+        height: '90px',
+      },
     logo: {
       display: 'flex',
       fontSize: '1.75rem',
