@@ -1,6 +1,10 @@
 
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaSun, FaHome, FaCheckSquare} from "react-icons/fa";
+import "./LandingSection.css"; 
+import Footer from '../components/Footer';
+import Testimonials from '../components/Testimonials';
 
 const HomePage = () => {
 
@@ -398,6 +402,75 @@ const HomePage = () => {
         </div>
         </div>
         </div> 
+        {/* Section Title */}
+        <section className="landing-section">
+      {/* Section Title */}
+      <div className="title-container">
+        <h4 className="subtitle">🌱 Une révolution pour le marché</h4>
+        <h2 className="main-title">Une compensation carbone simple et responsable</h2>
+      </div>
+
+      {/* Grid Content */}
+      <div className="grid-container">
+        {/* Left Image */}
+        <div
+          className="grid-item image-card"
+          style={{ backgroundImage: "url('/forest.jpg')" }}
+        >
+            <div className="card-overlay">
+            <h3 className="overlay-title"> Des crédits carbone traçables et vérifiés. </h3>
+            <p className='card-text'>Grâce à la blockchain, chaque crédit carbone que vous achetez est enregistré de 
+                manière transparente et infalsifiable. Fini le greenwashing, chaque transaction est 100% vérifiable.</p>
+         
+          </div>
+        </div>
+
+        <div className="grid-item text-card">
+        <FaSun className="card-icon" />
+        <div className = "text-content"> 
+          <h3 className="card-title">Achetez des crédits carbone en toute confiance</h3>
+          <p className="card-text">
+          Tous les crédits disponibles sur CarbonX sont issus de projets audités, sélectionnés selon des critères stricts (reforestation, énergies renouvelables, captation de CO₂). 
+          Compensation fiable et impact réel garantis.
+          </p>
+          </div>
+          </div>
+
+        <div className="grid-item text-card">
+        <FaHome className="card-icon" />
+        <div className = "text-content"> 
+          <h3 className="card-title">Un suivi simplifié pour votre conformité ESG</h3>
+          <p className="card-text">
+          CarbonX génère automatiquement des rapports conformes aux réglementations CSRD et ESRS, 
+          facilitant la déclaration de votre compensation carbone et intégration dans votre stratégie RSE.
+          </p>
+          </div> 
+        </div>
+      </div>
+    </section>
+    <div className="why-wrapper">
+  <section className="why-carbonx">
+    <div className="why-container">
+      <div className="text-card wide-text-card">
+        <h3 className="why-title">Pourquoi CarbonX?</h3>
+        <p className="why-description">
+          Aujourd’hui, 90% des entreprises peinent à trouver des crédits carbone de qualité conformes aux normes européennes (CSRD, EU ETS). Le manque de transparence et la double comptabilisation 
+          fragilisent la confiance dans le marché volontaire. CarbonX apporte une solution innovante en garantissant une compensation carbone sécurisée, 
+          traçable et conforme grâce à la blockchain et un audit rigoureux. :
+        </p>
+        <ul className="why-list">
+          <li><FaCheckSquare className="check-icon" /> Traçabilité totale grâce à la blockchain publique : Chaque crédit est enregistré sur une blockchain publique, éliminant tout risque de fraude. </li>
+          <li><FaCheckSquare className="check-icon" /> Crédits carbone de haute qualité, audités et vérifiés: Sélection rigoureuse et double audit indépendant pour assurer un impact réel.</li>
+          <li><FaCheckSquare className="check-icon" /> Conformité aux normes ESG européennes : Aligné avec les exigences CSRD, EU ETS et taxonomie verte.</li>
+          <li><FaCheckSquare className="check-icon" /> Reporting automatisé pour simplifier la gestion des émissions: Génération de rapports ESG conformes, facilitant la gestion des émissions.</li>
+        </ul>
+
+      </div>
+      <div className="why-image" style={{ backgroundImage: "url('/chamonix.jpg')" }}></div>
+    </div>
+  </section>
+</div>
+
         <div style={styles.sectionsContainer}>
             <h2 style={styles.sectionTitle}> Services </h2>
             <div style = {{...styles.serviceItem,...styles.firstServiceItem}}>
@@ -431,144 +504,14 @@ const HomePage = () => {
             </div>
             
         </div>
-        <section style={styles.testimonialsSection}>
-        <h2 style={styles.AvantagesTitle}>Nos avantages</h2>
-        <button onClick={prevSlide} style={{ ...styles.arrowButton, ...styles.leftArrow }}>◀</button>
 
-<div style={styles.carouselContainer}>
-    <div style={{ ...styles.testimonialsWrapper, transform: `translateX(-${currentIndex * 370}px)` }}>
-        {avantages.map((avantages, index) => (
-            <div key={index} style={styles.testimonialCard}>
-                <p style={styles.quote}>“{avantages.titre}”</p>
-                <p style={styles.author}>{avantages.text}</p>
-                
-            </div>
-        ))}
+      
+      <Testimonials />
+      <div className = "footer-wrapper"> 
+  <Footer />
+  </div>
     </div>
-</div>
 
-{/* Right Arrow */}
-<button onClick={nextSlide} style={{ ...styles.arrowButton, ...styles.rightArrow }}>▶</button>
-        {/* Left Arrow */}
-
-    </section>
-
-        <div style={styles.carouselContainer}>
-                {slides.map((slide, index) => (
-                    <div
-                        key={index}
-                        style={{
-                            ...styles.slide,
-                            ...(index === currentSlide ? styles.activeSlide : {}),
-                        }}
-                    >
-                        <img src={slide.img} alt={slide.title} style={styles.slideImage} />
-                        <h3 style={styles.slideTitle}>{slide.title}</h3>
-                        <p style={styles.slideText}>{slide.text}</p>
-                        <div style={styles.card}>
-                        <img src={slide.img} alt={slide.title} style={styles.cardImage} />
-                        <h3 style={styles.cardTitle}>{slide.title}</h3>
-                        <p style={styles.cardText}>{slide.text}</p>
-    </div>
-                    </div>
-                ))}
-                <button onClick={prevSlide} style={{ ...styles.arrowButton, ...styles.leftArrow }}>‹</button>
-                <button onClick={nextSlide} style={{ ...styles.arrowButton, ...styles.rightArrow }}>›</button>
-                <div style={styles.dotsContainer}>
-                    {slides.map((_, index) => (
-                        <div
-                            key={index}
-                            onClick={() => setCurrentSlide(index)}
-                            style={{
-                                ...styles.dot,
-                                ...(index === currentSlide ? styles.activeDot : {}),
-                            }}
-                        ></div>
-                    ))}
-                </div>
-            </div>
-
-            {/* New Section Below Carousel */}
-            <div style={styles.newSection}>
-                <h2 style={styles.newSectionTitle}>
-                    Gérez vos crédits carbones avec transparence
-                </h2>
-                
-                <div style={styles.newSectionGrid}>
-                    <div style={styles.featureCard}>
-                        <img src="/chart1.jpg" alt="Graphique dépenses" style={styles.featureImage} />
-                        <h3 style={styles.featureTitle}>Suivi des Transactions</h3>
-                        <p style={styles.featureText}>
-                            Analysez l'achat et la vente de vos crédits carbones en temps réel.
-                        </p>
-                    </div>
-
-                    <div style={styles.featureCard}>
-                        <img src="/chart2.jpg" alt="Statistiques carbone" style={styles.featureImage} />
-                        <h3 style={styles.featureTitle}>Tableau de Bord</h3>
-                        <p style={styles.featureText}>
-                            Visualisez vos émissions compensées et le marché carbone.
-                        </p>
-                    </div>
-
-                    <div style={styles.featureCard}>
-                        <img src="/chart3.jpg" alt="Statistiques entreprise" style={styles.featureImage} />
-                        <h3 style={styles.featureTitle}>Optimisation des Achats</h3>
-                        <p style={styles.featureText}>
-                            Maximisez votre impact environnemental grâce à des recommandations intelligentes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-         <section style={styles.sectionsContainer}>
-        <h2 style ={styles.sectionTitle} >Avantages</h2>
-        <div style={styles.serviceItem}>
-          <h3 style ={styles.subsectionTitle}>Transparence Accrue</h3>
-          <p>
-            Chaque transaction est publique et immuable, augmentant la confiance des utilisateurs. Pas de double comptabilisation. 
-          </p>
-        </div>
-        <div style={styles.serviceItem}>
-          <h3 style ={styles.subsectionTitle} >Interopérabilité Mondiale</h3>
-          <p>
-            Permet aux entreprises de participer au marché global.
-          </p>
-        </div>
-        <div style={styles.serviceItem}>
-          <h3 style ={styles.subsectionTitle} >Sécurité et traçabilité</h3>
-          <p>
-            Grâce aux fonctions de hachage cryptographique et au mécanisme de consensus, les transactions sont diffusées et enregistrées sur l'ensemble du réseau sans possibilité de modification privée. Chaque transaction est enregistrée de façon permanente et forme une chaîne irréversible, permettant de retracer l'historique avec précision.
-          </p>
-        </div>
-        <div style={styles.serviceItem}>
-          <h3 style ={styles.subsectionTitle} >Efficacité</h3>
-          <p>
-          La blockchain supprime les intermédiaires, réduisant les délais et les couts de traitement. Elle utilise aussi des contrats intelligents qui automatisent l'éxécution des termes lorsque les conditions prédéfinies sont remplies. 
-          </p>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section style={styles.testimonials}>
-        <h2>Témoignages de Clients</h2>
-        <blockquote>« Le trading de crédits carbones n'a jamais été aussi simple...»</blockquote>
-        <p><strong>Laura Doledec </strong></p>
-      </section>
-
-      {/* Contact Section */}
-      <section style={styles.contact}>
-        <h2>Nous Contacter</h2>
-        <div>
-          <p><strong>Adresse:</strong> 2 avenue Bernard Hirsch, 95000 Cergy</p>
-          <p><strong>Email:</strong> contact@carbonex.com</p>
-          <p><strong>Téléphone:</strong> +33 1 23 45 67 89</p>
-        </div>
-      </section>
-
-      <footer style={styles.footer}>
-        &copy; 2025 Carbone X - Tous droits réservés
-      </footer>
-    </div>
   );
 };
 

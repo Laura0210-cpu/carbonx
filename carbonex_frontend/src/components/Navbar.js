@@ -93,8 +93,8 @@ const Navbar = () => {
         <Link to="/Entreprise" style={styles.navLink}>
           Entreprise
         </Link>
-        <Link to="/ressources" style={styles.navLink}>
-          Ressources
+        <Link to="/blog" style={styles.navLink}>
+          Blog
         </Link>
         <Link to="/contact" style={styles.navLink}>
           Contact

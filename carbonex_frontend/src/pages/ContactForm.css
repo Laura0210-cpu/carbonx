@@ -1,0 +1,156 @@
+/* Main container */
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 80px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title and subtitle */
+.contact-title {
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.contact-title span {
+    color: #123B19; /* Green highlight */
+}
+.contact-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 60px;
+}
+
+/* Flexbox wrapper */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input fields */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+.input-field label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.input-field input,
+.input-field textarea,
+.phone-input input,
+.phone-input select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.input-field textarea {
+    height: 100px;
+    resize: none;
+}
+.phone-input {
+    display: flex;
+    gap: 10px;
+}
+.phone-input select {
+    width: 70px;
+}
+
+/* Services checkboxes */
+.services label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+/* Submit button */
+.submit-btn {
+    background: #204c36;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+.submit-btn:hover {
+    background: #1a3c2b;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+.info-section {
+    margin-bottom: 20px;
+}
+.info-section h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.info-section p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+.info-section ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.info-section ul li a {
+    text-decoration: none;
+    color: #204c36;
+    font-weight: bold;
+}
+.info-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Company Logos */
+.company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.company-logos span {
+    background: #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}

@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract CarbonCredit is ERC20 {
+    constructor(uint256 initialSupply) ERC20("CarbonCredit", "CC") {
+        _mint(msg.sender, initialSupply);
+    }
+    
+    // Add custom functions here for trading logic if needed.
+}

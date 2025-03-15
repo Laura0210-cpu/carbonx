@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout.jsx';
-
+import {useAuth} from "../context/AuthContext.js";
 import { Bar, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js'; 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarEle
 
 const AppWelcome = () => {
 
-
+  const { user } = useAuth();
   const creditData = [
     { vintage: '2022-29', project: "Thordur's Turtle Farm", type: 'Ex-post', category: 'Avoidance / Reduction' },
     { vintage: '2024-29', project: 'Sea faring creatures', type: 'Ex-post', category: 'Avoidance / Reduction' },

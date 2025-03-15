@@ -1,0 +1,344 @@
+.projet-page-de-garde {
+    background: url("/public/coucher_soleil_montagne.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300vh; /* Full height of the viewport */
+    width: 100vw; /* Full width */
+    position: relative;
+    text-align: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.projet-page-de-garde::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Optional: dark overlay */
+  }
+
+/* Remove the image inside HTML */
+.projet-page-de-garde .overlap-group {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.navbar {
+    position: fixed; /* Stays at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000; /* Keeps navbar above content */
+    background: transparent !important; /* ✅ Force transparency */
+    transition: background 0.3s ease-in-out;
+  }
+
+/* Split Section Layout */
+.split-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .left-column {
+    width: 40%;
+    background-color: #ffffff; /* Dark green */
+    color: #123B19;
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  .left-column h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .right-column {
+    width: 60%;
+    padding: 20px;
+  }
+  
+  .split-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  /* Optional: Change the navbar color when scrolling */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.7); /* Darker when scrolling */
+    backdrop-filter: blur(5px); /* Adds a subtle blur effect */
+  }
+  
+  /* Brand Name (CarbonX) */
+  .brand {
+    position: absolute;
+    left: 20px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: white;
+  }
+.navbard.text-dark .brand,
+.navbar.text-dark .nav-links li a {
+    color: black !important;
+}
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 30px; /* Adjust spacing between links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Link Styling */
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+  }
+  
+  .text-container {
+    max-width: 600px; /* Keeps text readable without stretching */
+    line-height: 1.7; /* Increases spacing between lines */
+    margin-right: auto;
+  }
+
+/* Adjust text */
+.projet-page-de-garde .text-wrapper {
+    color: #ffffff;
+    font-family: "Darker Grotesque-ExtraBold", Helvetica;
+    font-size: 20px;
+    font-weight: 800;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Center title */
+.projet-page-de-garde .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-size: 115px;
+    font-weight: 500;
+    letter-spacing: 2.3px;
+    line-height: 120px;
+    position: absolute;
+    top: 30%;
+    bottom: 20%; 
+    z-index:10; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+.parallax-wrapper {
+    position: relative;
+    height: 200vh; /* Makes the scroll effect longer */
+  }
+
+/* Centered paragraph */
+.projet-page-de-garde .p {
+    color: #ffffff;
+    font-family: "Darker Grotesque-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    margin-top: 75px;
+}
+
+/* Remove left divider */
+.projet-page-de-garde .rectangle {
+    display: none;
+}
+.projet-page-de-garde .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 120px;
+    position: absolute;
+    top: 35%;
+    
+    z-index:10; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Centered paragraph */
+.projet-page-de-garde .text-wrapper-5 {
+    color: #CCCBC5;
+    font-family: "Darker Grotesque-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index:1; 
+    
+    margin-top: 50px;
+}
+
+.projet-page-de-garde .text-wrapper-6 {
+    color: #ffffff;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    
+    z-index:10; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.projet-page-de-garde .text-wrapper-7 {
+    color: #CCCBC5;
+    font-family: "Darker Grotesque-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index:1; 
+    
+    margin-top: 50px;
+}
+
+.projet-page-de-garde .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 67%;
+    
+    z-index:10; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.projet-page-de-garde .text-wrapper-9 {
+    color: #CCCBC5;
+    font-family: "Darker Grotesque-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index:1; 
+    
+    margin-top: 50px;
+}
+.projet-page-de-garde .text-wrapper-10 {
+    color: #ffffff;
+    font-family: "Darker Grotesque-Regular", Helvetica;
+    font-size: 17px;
+    font-weight: 550;
+    text-align: center;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index:1; 
+    
+    margin-top: 50px;
+}
+  
+  
+  .parallax-wrapper {
+    position: relative;
+    height: 100vh; /* Makes the scroll effect longer */
+  }
+  
+  .white-section {
+    background: #ffffff;
+    height: 0vh; /* Makes the white section visible after scrolling */
+    padding: 50px;
+  }
+  
+  .text-section {
+    color: #123B19;
+    font-size: 20px;
+    line-height: 1.7; /* Increases spacing between lines */
+    margin-right: auto;
+    padding: 30px;
+   
+    
+  }
+  .text-title{
+    color: #123B19;
+    font-size: 30px;
+    font-family: "Darker Grotesque-Medium", Helvetica;
+    line-height: 1.7; /* Increases spacing between lines */
+    margin-right: auto;
+    padding: 10px;
+  }
+.checkIconStyles{
+    font-size: 22px;
+    margin-right: 10px;
+    color: "#0f3d21";
+}
+
+.whyListStyles {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    width: 95%;
+}
+.whyListItemStyles{ 
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+    
+}

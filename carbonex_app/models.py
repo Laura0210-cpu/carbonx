@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
+from django.db.models import JSONField
 import uuid
+from django.conf import settings
 
 class CustomUserManager(BaseUserManager):
     """
@@ -34,8 +36,12 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []  # Remove 'username' from required fields
-
+    wallet_address = models.CharField(max_length=42, unique=True, null=True, blank=True)
+    role = models.CharField(max_length = 10, choices =[('buyer', 'Buyer'), ('seller', 'Seller'), ('both', 'Both')], default='buyer')
     objects = CustomUserManager()  # Use custom manager
+ 
+
+    
 
     def __str__(self):
         return self.email
@@ -43,9 +49,9 @@ class CustomUser(AbstractUser):
 class Project(models.Model):
     STATUS_CHOICES = [
         ('planned', 'Planned'),
-        ('active', 'Active'),
-        ('completed', 'Completed'),
-        ('archived', 'Archived')
+        ('listed', 'Listed'),
+        ('design_certified', 'Gold Standard Certified design'),
+        ('project_certified', 'Gold Standard Certified Project')
     ]
     id = models.UUIDField(primary_key= True, default = uuid.uuid4, editable= False)
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="projects")
@@ -60,10 +66,50 @@ class Project(models.Model):
     country = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     number_of_credits = models.PositiveIntegerField(default=0)
+
     created_at = models.DateTimeField(auto_now_add=True)  # Auto timestamp
+    crediting_period = models.PositiveIntegerField(default=0) #in months
+    retired = models.PositiveIntegerField(default=0) 
+    issued = models.PositiveIntegerField(default=0)
+    product = models.CharField(max_length = 3, default= 'VER')
+    sdg = JSONField(blank=True, null=True, help_text="Array of up to 17 integers (max)")
+    latitude = models.FloatField(null= True, blank = True, help_text = "Latitute coordinate ")
+    longitude = models.FloatField(null=True, blank= True, help_text = "longitude coordinate")
 
     def __str__(self):
         return self.name
     
     ### Il me faut ici:  class Trade(models.Model), il faudrait comme fields; registered_date, trade_it, amount_CO2, amount_nego, 
     ###buyer, seller, project. 
+
+class Trade(models.Model):
+    # Automatically record when the trade is registered
+    registered_date = models.DateTimeField(auto_now_add=True)
+    # A trade identifier; this could be set to the blockchain transaction hash,
+    # or a unique trade ID as per your business logic.
+    trade_it = models.CharField(max_length=100, unique=True)
+    # Amount of CO₂ credits traded (adjust max_digits/decimal_places as needed)
+    amount_CO2 = models.DecimalField(max_digits=20, decimal_places=2)
+    # The negotiated amount (for example, in USD, or a discount factor)
+    amount_nego = models.DecimalField(max_digits=20, decimal_places=2)
+    
+    # Buyer and seller are linked to your custom user model
+    buyer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="buy_trades"
+    )
+    seller = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="sell_trades"
+    )
+    # Link this trade to the project it applies to
+    project = models.ForeignKey(
+        'Project',
+        on_delete=models.CASCADE,
+        related_name="trades"
+    )
+
+    def __str__(self):
+        return f"Trade {self.trade_it} on {self.project.name} ({self.amount_CO2} CO₂)"

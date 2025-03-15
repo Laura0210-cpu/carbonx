@@ -1,0 +1,150 @@
+  /* Wrapper to keep the green background */
+  
+.footer {
+    background: url("/public/mountains.jpg") no-repeat center center/cover;
+    color: white;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-bottom: 40px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+  }
+  
+  .footer-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Section Newsletter */
+  .footer-newsletter {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .footer-title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .newsletter-input {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .newsletter-input input {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+  }
+  
+  .newsletter-input button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Contenu du footer */
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+  
+  .footer-brand {
+    max-width: 250px;
+  }
+  
+  .footer-brand h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-brand p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #cccccc;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons svg {
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .social-icons svg:hover {
+    color: #ffcc00;
+  }
+  
+  /* Sections de liens */
+  .footer-links {
+    margin: 20px;
+  }
+  
+  .footer-links h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li:hover {
+    color: #ffcc00;
+  }
+  
+  /* Copyright */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #cccccc;
+  }
+  .nav-link{
+    text-decoration: none;  /* Remove the underline */
+    color: white;  /* Change color to white or another suitable color */
+    font-size: 16px;  /* Adjust font size */
+    font-weight: 500;  /* Make it readable */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+    
+  }
+  .nav-link:hover {
+    color: #ffcc00;  /* Change color on hover */
+}
