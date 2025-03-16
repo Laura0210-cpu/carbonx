@@ -1,12 +1,24 @@
 import React, { useEffect, useRef, useState} from "react";
 import Chart from "chart.js/auto";
-import Layout from "../../components/LayoutSeller.jsx";
+import Layout from "../components/Layout.jsx";
+import { default as SellerLayout } from "../components/LayoutSeller.jsx" ;
+
 
 const ReportSeller = () => {
     const lineChartRef = useRef(null);
     const barChartRef = useRef(null);
     const pieChartRef = useRef(null);
   
+    const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
+    
+      // Handle the loading state for user data
+      if (userLoading) {
+        console.log("app.js: waiting for user data ...");
+        return <div>Loading user data...</div>; // Show loading indicator until the user is loaded
+      }
+    const userRole = user?.role;
+    const SelectedLayout = userRole === "seller" ? SellerLayout : Layout; 
+    
     const [totalCredits, setTotalCredits] = useState(25390);
     const [trendPercentage, setTrendPercentage] = useState(3.2);
     const [portfolioValue, setPortfolioValue] = useState(12500);
