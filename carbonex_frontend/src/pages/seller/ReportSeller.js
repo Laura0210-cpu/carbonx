@@ -17,10 +17,10 @@ const ReportSeller = () => {
       const lineChart = new Chart(lineChartRef.current, {
         type: "line",
         data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          labels: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jun", "Jul"],
           datasets: [
             {
-              label: "Market Price ($/ton)",
+              label: "Prix du marché($/ton)",
               data: [2.1, 2.3, 2.8, 3.0, 3.2, 3.5, 3.8],
               borderColor: "#123B19",
               backgroundColor: "rgba(31, 120, 49, 0.2)",
@@ -34,7 +34,7 @@ const ReportSeller = () => {
       const pieChart = new Chart(pieChartRef.current, {
         type: "pie",
         data: {
-          labels: ["Renewable Energy", "Reforestation", "Carbon Capture"],
+          labels: ["Énergie renouvelable", "Reforestation", "Capture de carbone"],
           datasets: [
             {
               data: [45, 35, 20],
@@ -48,10 +48,10 @@ const ReportSeller = () => {
       const barChart = new Chart(barChartRef.current, {
         type: "bar",
         data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          labels: ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil"],
           datasets: [
             {
-              label: "Trading Volume (in tons)",
+              label: "Volume des transactions (en tonnes)",
               data: [100, 120, 150, 180, 200, 220, 250],
               backgroundColor: "#123B19",
             },
@@ -72,91 +72,91 @@ const ReportSeller = () => {
         {/* Dashboard Overview */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px", marginBottom: "30px" }}>
           <div style={cardStyle}>
-            <h3>Total Carbon Credits Traded</h3>
+            <h3>Total des crédits carbone échangés</h3>
             <p style={{ fontSize: "24px", fontWeight: "bold", color: "#123B19" }}>{totalCredits} tCO₂</p>
             <p style={{ color: trendPercentage > 0 ? "green" : "red" }}>{trendPercentage}% this month</p>
           </div>
   
           <div style={cardStyle}>
-            <h3>Market Price</h3>
+            <h3>Prix du marché</h3>
             <p style={{ fontSize: "24px", fontWeight: "bold", color: "#123B19" }}>${marketPrice}/ton</p>
           </div>
   
           <div style={cardStyle}>
-            <h3>Your Portfolio Value</h3>
+            <h3>Valeur de votre portefeuille</h3>
             <p style={{ fontSize: "24px", fontWeight: "bold", color: "#123B19" }}>${portfolioValue}</p>
           </div>
   
           <div style={cardStyle}>
-            <h3>Recent Transactions</h3>
-            <p>Last buy: 50 credits @ $2.8</p>
-            <p>Last sell: 30 credits @ $3.0</p>
+            <h3>Transactions récentes: </h3>
+            <p>Dernier achat : 50 crédits @ $2.8</p>
+            <p>Dernière vente : 30 crédits @ $3.0</p>
           </div>
         </div>
   
         {/* Charts Section */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", marginBottom: "30px" }}>
           <div style={chartCardStyle}>
-            <h3>Carbon Credit Price Trends</h3>
+            <h3>Tendances des prix des crédits carbone</h3>
             <canvas ref={lineChartRef}></canvas>
           </div>
   
           <div style={chartCardStyle}>
-            <h3>Market Volume & Liquidity</h3>
+            <h3>Volume du marché & Liquidité</h3>
             <canvas ref={barChartRef}></canvas>
           </div>
   
           <div style={chartCardStyle}>
-            <h3>Your Portfolio Summary</h3>
+            <h3>Résumé de votre portefeuille</h3>
             <canvas ref={pieChartRef}></canvas>
           </div>
         </div>
   
         {/* Sustainability Impact */}
         <div style={cardStyle}>
-          <h3>Your Environmental Contribution</h3>
-          <p>You have helped offset <b>200 metric tons of CO₂</b> 🌍</p>
-          <h3>Projected Impact Forecast</h3>
-          <p>Estimated offset next year: <b>+15%</b></p>
+          <h3>Votre contribution environnementale</h3>
+          <p>Vous avez contribué à compenser <b>200 tonnes métriques de CO₂</b> 🌍</p>
+          <h3>Prévision d'impact projetée</h3>
+          <p>Estimation de compensation pour l'année prochaine : <b>+15%</b></p>
         </div>
   
         {/* Notifications & Insights */}
         <div style={cardStyle}>
-          <h3>Market Alerts & News</h3>
-          <p>🔔 Carbon credits surged by 5% today!</p>
-          <p>📢 New sustainability regulations announced.</p>
+          <h3>Alerte de Marché et Actualité</h3>
+          <p>🔔 Les crédits carbone ont augmenté de 5% aujourd'hui !</p>
+          <p>📢 De nouvelles réglementations en matière de durabilité ont été annoncées.</p>
         </div>
   
         {/* Filter & Reports Section */}
         <div style={cardStyle}>
-          <h3>Generate Reports</h3>
-          <button style={buttonStyle}>Export as PDF</button>
-          <button style={buttonStyle}>Export as CSV</button>
+          <h3>Générer des Rapports</h3>
+          <button style={buttonStyle}>Exporter en PDF</button>
+          <button style={buttonStyle}>Exporter en CSV</button>
         </div>
   
         {/* Documents Table */}
-        <h3 style={{ marginTop: "30px" }}>Download Reports</h3>
+        <h3 style={{ marginTop: "30px" }}>Télécharger les Rapports</h3>
         <table style={tableStyle}>
           <thead>
             <tr style ={tableHeaderStyle}>
-              <th style ={{textAlign: "left"}}>Document Name</th>
-              <th style ={{textAlign: "left"}}>Size</th>
-              <th style ={{textAlign: "left"}}>Date Published</th>
+              <th style ={{textAlign: "left"}}>Nom du Document</th>
+              <th style ={{textAlign: "left"}}>Taille</th>
+              <th style ={{textAlign: "left"}}>Date de Publication</th>
               <th style ={{textAlign: "center"}}>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>CO₂ Market Report</td>
+              <td>Rapport du Marché CO₂</td>
               <td>1.2 MB</td>
-              <td>March 5, 2025</td>
-              <td style = {{textAlign : "center"}} ><button style={buttonStyle}>Download</button></td>
+              <td>5 Mars, 2025</td>
+              <td style = {{textAlign : "center"}} ><button style={buttonStyle}>Télecharger</button></td>
             </tr>
             <tr>
-              <td>Carbon Credit Compliance</td>
+              <td>Conformité des Crédits Carbone</td>
               <td>850 KB</td>
-              <td>March 3, 2025</td>
-              <td style = {{textAlign : "center"}}><button style={buttonStyle}>Download</button></td>
+              <td>3 Mars, 2025</td>
+              <td style = {{textAlign : "center"}}><button style={buttonStyle}>Télécharger</button></td>
             </tr>
           </tbody>
         </table>

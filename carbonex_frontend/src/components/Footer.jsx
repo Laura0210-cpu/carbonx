@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
-
+import {Link} from 'react-router-dom'; 
 const Footer = () => {
   return (
     <footer className="footer">
@@ -33,11 +33,11 @@ const Footer = () => {
             <div className="footer-links">
               <h4>Liens Rapides</h4>
               <ul>
-                <li><a href = "/" className = "nav-link">Menu</a></li>
-                <li><a href = "/a-propos" className = "nav-link" >Offre</a></li>
-                <li><a href = "/Entreprise" className = "nav-link">Entreprise</a></li>
-                <li><a href = "/blog" className = "nav-link">Blog</a></li>
-                <li><a href = "/contact" className = "nav-link">Contact</a></li>
+                <li><Link to  = "/" className = "nav-link">Menu</Link></li>
+                <li><Link to  = "/a-propos" className = "nav-link" >Offre</Link></li>
+                <li><Link to  = "/Entreprise" className = "nav-link">Entreprise</Link></li>
+                <li><Link to  = "/blog" className = "nav-link">Blog</Link></li>
+                <li><Link to  = "/contact" className = "nav-link">Contact</Link></li>
               </ul>
             </div>
             
@@ -56,9 +56,9 @@ const Footer = () => {
               <h4>Découvrez</h4>
               <ul>
                 <li> <Link to = "/a-propos" className = "nav-link" > Notre Solution </Link> </li>
-                <li><a href = "/contact" className = "nav-link">Contact</a> </li>
-                <li><a href = "/blog" className = "nav-link">Blog</a></li>
-                <li><a href = "/Entreprise" className = "nav-link">Entreprise</a></li>
+                <li><Link to = "/contact" className = "nav-link">Contact</Link> </li>
+                <li><Link to = "/blog" className = "nav-link">Blog</Link></li>
+                <li><Link to = "/Entreprise" className = "nav-link">Entreprise</Link></li>
               </ul>
             </div>
           </div>
