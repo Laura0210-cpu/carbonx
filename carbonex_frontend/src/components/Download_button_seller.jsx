@@ -16,6 +16,6 @@ function DownloadButton() {
       Download Report
     </button>
   );
-}
+};
 
 export default DownloadButton;
