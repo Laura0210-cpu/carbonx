@@ -23,6 +23,7 @@ from django.conf import settings
 CustomUser = get_user_model()
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 @csrf_exempt
 def register_user(request):
     """Register a new user using their email as the username."""
