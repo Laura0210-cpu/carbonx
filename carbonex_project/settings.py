@@ -55,17 +55,18 @@ INSTALLED_APPS = [
     "carbonex_app",
     "rest_framework", 
     "rest_framework.authtoken",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
@@ -105,8 +106,13 @@ DATABASES = {
         "NAME": "CarbonX",  # Change to your actual MongoDB database name
         "ENFORCE_SCHEMA": False,
         "CLIENT": {
-            "host": config("MONGO_URI", default="mongodb+srv://LauraD:%40Paris2Houston@carbonx.bs67w.mongodb.net/? retryWrites=true&w=majority&appName=CarbonX"),
+            "host": config(
+                "MONGO_URI",
+                default="mongodb+srv://LauraD:%40Paris2Houston@carbonx.bs67w.mongodb.net/?retryWrites=true&w=majority&appName=CarbonX"
+            ),
             "serverSelectionTimeoutMS": 5000,
+            "tls": True,  # ✅ Ensure SSL connection
+            "authSource": "admin",
         },
     }
 }
@@ -160,6 +166,8 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
+    "https://carbonx-4jbn.onrender.com",
+
 ]
 
 WEB3_PROVIDER_URL = "http://127.0.0.1:8545"
