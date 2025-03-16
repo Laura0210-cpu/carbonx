@@ -54,7 +54,7 @@ def register_user(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_view(request):
-
+    print("DEBUG: request.data =", request.data)
     try:
         data = json.loads(request.body)
         email = data.get('email')
