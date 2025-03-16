@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="footer-links">
               <h4>Découvrez</h4>
               <ul>
-                <li> <a href = "/a-propos" className = "nav-link" > Notre Solution </a> </li>
+                <li> <Link to = "/a-propos" className = "nav-link" > Notre Solution </Link> </li>
                 <li><a href = "/contact" className = "nav-link">Contact</a> </li>
                 <li><a href = "/blog" className = "nav-link">Blog</a></li>
                 <li><a href = "/Entreprise" className = "nav-link">Entreprise</a></li>
