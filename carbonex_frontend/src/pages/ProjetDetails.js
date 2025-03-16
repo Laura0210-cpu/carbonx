@@ -5,6 +5,7 @@ import Layout from "../components/Layout.jsx";
 import { default as SellerLayout } from "../components/LayoutSeller.jsx" ;
 import { useAuth } from "../context/AuthContext";
 
+const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
 
 const ProjectDetails = () => {
   const { id } = useParams(); // Get project UUID from URL
@@ -14,7 +15,7 @@ const ProjectDetails = () => {
   const [isTrading, setIsTrading] = useState(false);
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/projects/${id}/`)
+      .get(`${API_URL}/projects/${id}/`)
       .then((response) => {
         setProject(response.data);
         setLoading(false);
@@ -66,7 +67,7 @@ const map ={
           // Simulate a trade by using a dummy transaction hash.
           const dummyTxHash = "0xMANUAL_TRADE_FOR_MVP";
           // Send the dummy transaction hash to your Django backend.
-          await axios.post(`http://127.0.0.1:8000/api/projects/${id}/record_trade/`, {
+          await axios.post(`${API_URL}/projects/${id}/record_trade/`, {
             tx_hash: dummyTxHash,
           });
           alert("Trade recorded successfully (manual simulation)!");
