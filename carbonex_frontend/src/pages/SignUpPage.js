@@ -7,7 +7,7 @@ const SignUpPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
+  const API_URL = process.env.REACT_APP_BACKEND_URL;
 
 
   const handleSignUp = async (e) => {
@@ -16,7 +16,7 @@ const SignUpPage = () => {
     setSuccess('');
 
     try {
-      const response = await axios.post('${API_URL}/register/', {
+      const response = await axios.post(`${API_URL}/register/`, {
         username,
         email,
         password,
