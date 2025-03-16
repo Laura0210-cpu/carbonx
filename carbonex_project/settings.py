@@ -163,7 +163,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend
+    "http://localhost:3000", 
+    "https://carbonx-mvp.netlify.app"# React frontend
 ]
 
 CSRF_TRUSTED_ORIGINS = [
