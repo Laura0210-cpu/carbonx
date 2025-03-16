@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState} from "react";
 import Chart from "chart.js/auto";
 import { default as SellerLayout } from "../../components/LayoutSeller.jsx";
 import Layout from "../../components/Layout.jsx";
-
+import { useAuth } from "../../context/AuthContext.js";
 
 import DownloadButton from "../../components/Download_button_seller.jsx";
 
