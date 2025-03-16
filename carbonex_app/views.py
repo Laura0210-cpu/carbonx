@@ -57,8 +57,8 @@ def login_view(request):
     print("DEBUG: request.data =", request.data)
     try:
         #data = json.loads(request.body)
-        email = request.get('email')
-        password = request.get('password')
+        email = request.data.get('email')
+        password = request.data.get('password')
 
         try:
             user = CustomUser.objects.get(email=email)
