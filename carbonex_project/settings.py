@@ -26,7 +26,9 @@ SECRET_KEY = "django-insecure-9wgd$^e5906cal(4!2)%jy04=u!x&q(ay9#h)@gvc_ih3k1tgm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['carbonx-4jbn.onrender.com',  # Add your Render URL
+    '127.0.0.1',  # Keep localhost for local testing
+    'localhost',]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
