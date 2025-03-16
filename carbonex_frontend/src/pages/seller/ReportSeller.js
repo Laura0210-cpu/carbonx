@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState} from "react";
 import Chart from "chart.js/auto";
 import Layout from "../components/Layout.jsx";
 import { default as SellerLayout } from "../components/LayoutSeller.jsx" ;
-
+import DownloadButton from "../../components/Download_button_seller.jsx";
 
 const ReportSeller = () => {
     const lineChartRef = useRef(null);
@@ -168,6 +168,7 @@ const ReportSeller = () => {
               <td>Conformité des Crédits Carbone</td>
               <td>850 KB</td>
               <td>3 Mars, 2025</td>
+              <td>Download_button_seller</td>
               <td style = {{textAlign : "center"}}><button style={buttonStyle}>Télécharger</button></td>
             </tr>
           </tbody>
