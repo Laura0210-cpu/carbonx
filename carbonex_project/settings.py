@@ -113,7 +113,6 @@ DATABASES = {
             "serverSelectionTimeoutMS": 5000,
             "tls": True,  # ✅ Ensure SSL connection
             "tlsAllowInvalidCertificates": True,  # ✅ Allow invalid certs if necessary
-            "tlsInsecure": True,
             "authSource": "admin",
         },
     }
