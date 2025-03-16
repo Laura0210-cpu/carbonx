@@ -55,10 +55,10 @@ const Footer = () => {
             <div className="footer-links">
               <h4>Découvrez</h4>
               <ul>
-                <li>Notre Solution</li>
-                <li>Carrières</li>
-                <li>Blog</li>
-                <li>Entreprise</li>
+                <li> <a href = "/a-propos" className = "nav-link" > Notre Solution </a> </li>
+                <li><a href = "/contact" className = "nav-link">Contact</a> </li>
+                <li><a href = "/blog" className = "nav-link">Blog</a></li>
+                <li><a href = "/Entreprise" className = "nav-link">Entreprise</a></li>
               </ul>
             </div>
           </div>
