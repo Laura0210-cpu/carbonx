@@ -22,6 +22,7 @@ from django.conf import settings
 
 CustomUser = get_user_model()
 
+@api_view(['POST'])
 @csrf_exempt
 def register_user(request):
     """Register a new user using their email as the username."""
@@ -36,7 +37,7 @@ def register_user(request):
 
             # Check if the email already exists
             if CustomUser.objects.filter(email=email).exists():
-                return JsonResponse({'error': 'Email already in use'}, status=400)
+                return Response({'error': 'Email already in use'}, status=400)
 
             # Create the user. We set 'username=email' since our USERNAME_FIELD = 'email'
             user = CustomUser.objects.create_user(
@@ -44,11 +45,11 @@ def register_user(request):
                 email=email,
                 password=password
             )
-            return JsonResponse({'message': 'User created successfully'}, status=201)
+            return Response({'message': 'User created successfully'}, status=201)
         except KeyError:
-            return JsonResponse({'error': 'Invalid data'}, status=400)
+            return Response({'error': 'Invalid data'}, status=400)
     
-    return JsonResponse({'error': 'Method not allowed'}, status=405)
+    return Response({'error': 'Method not allowed'}, status=405)
 
 
 @api_view(['POST'])
