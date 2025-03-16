@@ -42,7 +42,6 @@ def register_user(request):
 
             # Create the user. We set 'username=email' since our USERNAME_FIELD = 'email'
             user = CustomUser.objects.create_user(
-                username=email,  
                 email=email,
                 password=password
             )
