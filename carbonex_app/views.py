@@ -56,7 +56,7 @@ def register_user(request):
 def login_view(request):
     print("DEBUG: request.data =", request.data)
     try:
-        data = json.loads(request.body)
+        #data = json.loads(request.body)
         email = data.get('email')
         password = data.get('password')
 
