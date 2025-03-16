@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "app": "contenttypes",
+        "name": "0001_initial",
+        "applied": "2025-01-23 21:57:18.580452"
+    },
+    {
+        "id": 2,
+        "app": "contenttypes",
+        "name": "0002_remove_content_type_name",
+        "applied": "2025-01-23 21:57:18.583007"
+    },
+    {
+        "id": 3,
+        "app": "auth",
+        "name": "0001_initial",
+        "applied": "2025-01-23 21:57:18.586660"
+    },
+    {
+        "id": 4,
+        "app": "auth",
+        "name": "0002_alter_permission_name_max_length",
+        "applied": "2025-01-23 21:57:18.588814"
+    },
+    {
+        "id": 5,
+        "app": "auth",
+        "name": "0003_alter_user_email_max_length",
+        "applied": "2025-01-23 21:57:18.590453"
+    },
+    {
+        "id": 6,
+        "app": "auth",
+        "name": "0004_alter_user_username_opts",
+        "applied": "2025-01-23 21:57:18.592003"
+    },
+    {
+        "id": 7,
+        "app": "auth",
+        "name": "0005_alter_user_last_login_null",
+        "applied": "2025-01-23 21:57:18.593544"
+    },
+    {
+        "id": 8,
+        "app": "auth",
+        "name": "0006_require_contenttypes_0002",
+        "applied": "2025-01-23 21:57:18.594004"
+    },
+    {
+        "id": 9,
+        "app": "auth",
+        "name": "0007_alter_validators_add_error_messages",
+        "applied": "2025-01-23 21:57:18.595614"
+    },
+    {
+        "id": 10,
+        "app": "auth",
+        "name": "0008_alter_user_username_max_length",
+        "applied": "2025-01-23 21:57:18.597109"
+    },
+    {
+        "id": 11,
+        "app": "auth",
+        "name": "0009_alter_user_last_name_max_length",
+        "applied": "2025-01-23 21:57:18.598582"
+    },
+    {
+        "id": 12,
+        "app": "auth",
+        "name": "0010_alter_group_name_max_length",
+        "applied": "2025-01-23 21:57:18.600388"
+    },
+    {
+        "id": 13,
+        "app": "auth",
+        "name": "0011_update_proxy_permissions",
+        "applied": "2025-01-23 21:57:18.602557"
+    },
+    {
+        "id": 14,
+        "app": "auth",
+        "name": "0012_alter_user_first_name_max_length",
+        "applied": "2025-01-23 21:57:18.604153"
+    },
+    {
+        "id": 15,
+        "app": "carbonex_app",
+        "name": "0001_initial",
+        "applied": "2025-01-23 21:57:18.607014"
+    },
+    {
+        "id": 16,
+        "app": "admin",
+        "name": "0001_initial",
+        "applied": "2025-01-23 21:57:18.609729"
+    },
+    {
+        "id": 17,
+        "app": "admin",
+        "name": "0002_logentry_remove_auto_add",
+        "applied": "2025-01-23 21:57:18.612950"
+    },
+    {
+        "id": 18,
+        "app": "admin",
+        "name": "0003_logentry_add_action_flag_choices",
+        "applied": "2025-01-23 21:57:18.615447"
+    },
+    {
+        "id": 19,
+        "app": "sessions",
+        "name": "0001_initial",
+        "applied": "2025-01-23 21:57:18.617014"
+    },
+    {
+        "id": 20,
+        "app": "authtoken",
+        "name": "0001_initial",
+        "applied": "2025-01-23 23:17:16.623646"
+    },
+    {
+        "id": 21,
+        "app": "authtoken",
+        "name": "0002_auto_20160226_1747",
+        "applied": "2025-01-23 23:17:16.631985"
+    },
+    {
+        "id": 22,
+        "app": "authtoken",
+        "name": "0003_tokenproxy",
+        "applied": "2025-01-23 23:17:16.632867"
+    },
+    {
+        "id": 23,
+        "app": "authtoken",
+        "name": "0004_alter_tokenproxy_options",
+        "applied": "2025-01-23 23:17:16.634471"
+    },
+    {
+        "id": 24,
+        "app": "carbonex_app",
+        "name": "0002_project",
+        "applied": "2025-02-02 14:26:56.498604"
+    },
+    {
+        "id": 25,
+        "app": "carbonex_app",
+        "name": "0003_alter_customuser_managers_remove_customuser_username",
+        "applied": "2025-02-02 14:39:57.834734"
+    },
+    {
+        "id": 26,
+        "app": "carbonex_app",
+        "name": "0004_alter_project_id",
+        "applied": "2025-02-02 15:28:40.137487"
+    },
+    {
+        "id": 27,
+        "app": "carbonex_app",
+        "name": "0005_trade",
+        "applied": "2025-02-24 22:25:26.937622"
+    },
+    {
+        "id": 28,
+        "app": "carbonex_app",
+        "name": "0006_customuser_balance",
+        "applied": "2025-02-24 23:00:57.678914"
+    },
+    {
+        "id": 29,
+        "app": "carbonex_app",
+        "name": "0007_remove_customuser_balance_customuser_wallet_address",
+        "applied": "2025-02-24 23:24:11.195728"
+    },
+    {
+        "id": 30,
+        "app": "carbonex_app",
+        "name": "0008_project_crediting_period_project_issued_and_more",
+        "applied": "2025-03-07 12:28:33.048503"
+    },
+    {
+        "id": 31,
+        "app": "carbonex_app",
+        "name": "0009_customuser_role",
+        "applied": "2025-03-08 08:12:29.431839"
+    },
+    {
+        "id": 32,
+        "app": "carbonex_app",
+        "name": "0010_project_latitude_project_longitude",
+        "applied": "2025-03-08 15:22:23.939283"
+    }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "app_label": "admin",
+        "model": "logentry"
+    },
+    {
+        "id": 2,
+        "app_label": "auth",
+        "model": "permission"
+    },
+    {
+        "id": 3,
+        "app_label": "auth",
+        "model": "group"
+    },
+    {
+        "id": 4,
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    },
+    {
+        "id": 5,
+        "app_label": "sessions",
+        "model": "session"
+    },
+    {
+        "id": 6,
+        "app_label": "carbonex_app",
+        "model": "customuser"
+    },
+    {
+        "id": 7,
+        "app_label": "authtoken",
+        "model": "token"
+    },
+    {
+        "id": 8,
+        "app_label": "authtoken",
+        "model": "tokenproxy"
+    },
+    {
+        "id": 9,
+        "app_label": "carbonex_app",
+        "model": "project"
+    },
+    {
+        "id": 10,
+        "app_label": "carbonex_app",
+        "model": "trade"
+    }
+]
