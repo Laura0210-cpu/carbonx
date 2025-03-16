@@ -168,11 +168,25 @@ const ReportSeller = () => {
               <td>Conformité des Crédits Carbone</td>
               <td>850 KB</td>
               <td>3 Mars, 2025</td>
-              <td>Download_button_seller</td>
-              <td style = {{textAlign : "center"}}><button style={buttonStyle}>Télécharger</button></td>
-            </tr>
+              
+              <td style={{ textAlign: "center" }}>
+  <button
+    style={buttonStyle}
+    onClick={() => {
+      const link = document.createElement("a");
+      link.href = "/rapport_trading_carbone_seller.xlsx"; // Ensure the file is accessible
+      link.setAttribute("download", "rapport_trading_carbone_seller.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }}
+  >
+    Télécharger
+  </button>
+</td>            </tr>
           </tbody>
         </table>
+        <DownloadButton/>
       </div>
       </Layout>
     );
