@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
+// Replace with your environment variable or direct URL
+const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -8,17 +11,20 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-
+        
         if (token) {
-            axios.get("http://127.0.0.1:8000/api/user/", {
-                headers: { Authorization: `Token ${token}` }  // ✅ Send token
+            axios.get(`${API_URL}/user/`, {
+                headers: { Authorization: `Token ${token}` }
             })
             .then(response => {
-                console.log("✅ User Data:", response.data);  // ✅ Debugging
+                console.log("✅ User Data:", response.data); 
                 setUser(response.data);
             })
             .catch(error => {
-                console.error("❌ Error fetching user:", error.response ? error.response.data : error);
+                console.error(
+                    "❌ Error fetching user:",
+                    error.response ? error.response.data : error
+                );
                 setUser(null);
             });
         }
