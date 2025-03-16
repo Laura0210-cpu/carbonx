@@ -12,9 +12,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.get(`${API_URL}/your-endpoint`);
-      return response.data;
-    
+      const response = await axios.post(`${API_URL}/login/`, {
+        email,
+        password,
+      });
 
       if (response.status === 200) {
         // Save token to localStorage
