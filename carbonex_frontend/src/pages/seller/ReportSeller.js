@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState} from "react";
 import Chart from "chart.js/auto";
-import Layout from "../components/Layout.jsx";
-import { default as SellerLayout } from "../components/LayoutSeller.jsx" ;
+import Layout from "../../components/LayoutSeller.jsx";
+import Layout from "../../components/Layout.jsx";
+
+
 import DownloadButton from "../../components/Download_button_seller.jsx";
 
 const ReportSeller = () => {
