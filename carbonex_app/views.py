@@ -30,9 +30,9 @@ def register_user(request):
     
     if request.method == 'POST':
         try:
-            data = json.loads(request.body)
-            email = data.get('email')
-            password = data.get('password')
+           
+            email =request.data.get('email')
+            password = request.data.get('password')
 
             # Check if the email already exists
             if CustomUser.objects.filter(email=email).exists():
