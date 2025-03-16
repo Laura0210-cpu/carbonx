@@ -11,15 +11,6 @@ const ReportSeller = () => {
     const barChartRef = useRef(null);
     const pieChartRef = useRef(null);
   
-    const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
-    
-      // Handle the loading state for user data
-      if (userLoading) {
-        console.log("app.js: waiting for user data ...");
-        return <div>Loading user data...</div>; // Show loading indicator until the user is loaded
-      }
-    const userRole = user?.role;
-    const SelectedLayout = userRole === "seller" ? SellerLayout : Layout; 
     
     const [totalCredits, setTotalCredits] = useState(25390);
     const [trendPercentage, setTrendPercentage] = useState(3.2);
@@ -79,9 +70,19 @@ const ReportSeller = () => {
         barChart.destroy();
       };
     }, []);
+    const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
+    
+      // Handle the loading state for user data
+      if (userLoading) {
+        console.log("app.js: waiting for user data ...");
+        return <div>Loading user data...</div>; // Show loading indicator until the user is loaded
+      }
+    const userRole = user?.role;
+    const SelectedLayout = userRole === "seller" ? SellerLayout : Layout; 
+    
   
     return (
-        <Layout>
+        <SelectedLayout>
       <div style={{ padding: "20px", backgroundColor: "#fff", minHeight: "100vh" }}>
         {/* Dashboard Overview */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px", marginBottom: "30px" }}>
@@ -188,9 +189,9 @@ const ReportSeller = () => {
 </td>            </tr>
           </tbody>
         </table>
-        <DownloadButton/>
+        <DownloadButton />
       </div>
-      </Layout>
+      </SelectedLayout>
     );
   };
   
