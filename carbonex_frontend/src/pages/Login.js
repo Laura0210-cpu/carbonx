@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+const API_URL = process.env.REACT_APP_BACKEND_URL;
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,10 +12,9 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/login/', {
-        email,
-        password,
-      });
+      const response = await axios.get(`${API_URL}/your-endpoint`);
+      return response.data;
+    
 
       if (response.status === 200) {
         // Save token to localStorage
