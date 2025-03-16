@@ -102,10 +102,10 @@ WSGI_APPLICATION = "carbonex_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "djongo",
-        "NAME": "your_database_name",  # Change to your actual MongoDB database name
+        "NAME": "CarbonX",  # Change to your actual MongoDB database name
         "ENFORCE_SCHEMA": False,
         "CLIENT": {
-            "host": config("MONGO_URI", default="your-mongodb-connection-string"),
+            "host": config("MONGO_URI", default="mongodb+srv://LauraD:%40Paris2Houston@carbonx.bs67w.mongodb.net/? retryWrites=true&w=majority&appName=CarbonX"),
             "serverSelectionTimeoutMS": 5000,
         },
     }
