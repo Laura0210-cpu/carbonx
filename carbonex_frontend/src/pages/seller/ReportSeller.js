@@ -145,8 +145,32 @@ const ReportSeller = () => {
         {/* Filter & Reports Section */}
         <div style={cardStyle}>
           <h3>Générer des Rapports</h3>
-          <button style={buttonStyle}>Exporter en PDF</button>
-          <button style={buttonStyle}>Exporter en CSV</button>
+          <button
+    style={buttonStyle}
+    onClick={() => {
+      const link = document.createElement("a");
+      link.href = "/rapport_qualitatif_carbone_acheteur_corrige.pdf"; // Ensure the file is accessible
+      link.setAttribute("download", "rapport_qualitatif_carbone_acheteur_corrige.pdf");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }}
+  >
+    Exporter en PDF
+  </button>   
+  <button
+    style={buttonStyle}
+    onClick={() => {
+      const link = document.createElement("a");
+      link.href = "/rapport2.xlsx"; // Ensure the file is accessible
+      link.setAttribute("download", "rapport2.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }}
+  >
+    Exporter en CSV
+  </button> 
         </div>
   
         {/* Documents Table */}
@@ -165,8 +189,19 @@ const ReportSeller = () => {
               <td>Rapport du Marché CO₂</td>
               <td>1.2 MB</td>
               <td>5 Mars, 2025</td>
-              <td style = {{textAlign : "center"}} ><button style={buttonStyle}>Télecharger</button></td>
-            </tr>
+              <button
+    style={buttonStyle}
+    onClick={() => {
+      const link = document.createElement("a");
+      link.href = "/rapport2.xlsx"; // Ensure the file is accessible
+      link.setAttribute("download", "rapport2.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }}
+  >
+    Télécharger
+  </button>            </tr>
             <tr>
               <td>Conformité des Crédits Carbone</td>
               <td>850 KB</td>
@@ -189,7 +224,7 @@ const ReportSeller = () => {
 </td>            </tr>
           </tbody>
         </table>
-        <DownloadButton />
+    
       </div>
       </SelectedLayout>
     );
