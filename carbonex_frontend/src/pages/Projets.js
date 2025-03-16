@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Layout from "../components/Layout.jsx";
 
+const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
 
 const Projets = () => {
   const [projects, setProjects] = useState([]);
@@ -33,12 +34,12 @@ const Projets = () => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
   
-  
+
 
   useEffect(() => {
     const token_test = localStorage.getItem("token"); // get it from Local Storage
     axios
-      .get("http://127.0.0.1:8000/api/projets/", {
+      .get(`${API_URL}/projets/`, {
         headers: {
           Authorization: `Token ${token_test}`, // <-- pass token in Authorization header
         },
