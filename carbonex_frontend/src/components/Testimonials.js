@@ -7,7 +7,7 @@ const testimonials = [
     role: "Cofondateur et CEO de Hsbc",
     review:
       "Ce qui m’a convaincu, c'est la mission. Apporter de la simplicité grâce à un outil dans lequel tout est centralisé, à la façon d’un couteau suisse. Au-delà de ça, j’ai aimé le design de votre produit, et la place que vous donnez à l’UX. Le fait que vous replaciez l’utilisateur au centre de votre développement produit.",
-    image: "/montagne_nuageuse.jpg",
+    image: "/riz.jpg",
   },
   {
     name: "François D.",
