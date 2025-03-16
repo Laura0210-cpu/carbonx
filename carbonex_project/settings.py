@@ -103,7 +103,7 @@ WSGI_APPLICATION = "carbonex_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "djongo",
-        "NAME": "CarbonX",  # Change to your actual MongoDB database name
+        "NAME": "LauraD",  # Change to your actual MongoDB database name
         "ENFORCE_SCHEMA": False,
         "CLIENT": {
             "host": config(
