@@ -47,7 +47,13 @@ const sdgLogos = {
   16: "/goal16.png",
   17: "/goal17.png",
 };
-const { user } = useAuth(); // Assuming `user` contains role info
+const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
+
+  // Handle the loading state for user data
+  if (userLoading) {
+    console.log("app.js: waiting for user data ...");
+    return <div>Loading user data...</div>; // Show loading indicator until the user is loaded
+  }
 const userRole = user?.role;
 const SelectedLayout = userRole === "seller" ? SellerLayout : Layout; 
 
