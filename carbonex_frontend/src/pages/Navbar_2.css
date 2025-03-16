@@ -1,0 +1,47 @@
+/* General Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the links */
+    padding: 10px 0;
+    font-family: "Darker Grotesque", sans-serif;
+    z-index: 1000; /* Ensures it's above other elements */
+  }
+  
+  /* Brand Name (CarbonX) */
+  .brand {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 30px; /* Adjust spacing between links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Link Styling */
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+  }
+  
