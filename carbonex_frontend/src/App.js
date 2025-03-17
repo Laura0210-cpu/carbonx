@@ -18,6 +18,7 @@ import { useAuth } from './context/AuthContext.js';
 import AProposPage from './pages/AProposPage';
 import BlogPage from './pages/BlogPage';
 import ContactForm from './pages/ContactForm';
+import TradeForm from './pages/TradeForm';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
         <Route path ="/rapports" element ={<ReportSeller/> } />
         <Route path="/blog" element={<BlogPage/> } /> 
         <Route path = "/contact" element ={<ContactForm />} />
+        <Route path = "/trade" element ={<TradeForm />} />
         
       </Routes>
     </>
