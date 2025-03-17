@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
-
+import Layout from '../components/Layout';
+import { default as SellerLayout} from '../components/LayoutSeller';
 const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
 
 
@@ -47,8 +48,19 @@ const TradeForm = () => {
       `Trade simulé : Projet ${selectedProject ? selectedProject.name : ''} (ID ${selectedProject ? selectedProject.id : ''}), Quantité ${quantity}, Total ${total}`
     );
   };
+  const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
+  
+    // Handle the loading state for user data
+    if (userLoading) {
+      console.log("app.js: waiting for user data ...");
+      return <div>Loading user data...</div>; // Show loading indicator until the user is loaded
+    }
+  const userRole = user?.role;
+  const SelectedLayout = userRole === "seller" ? SellerLayout : Layout; 
+  
 
   return (
+    <SelectedLayout> 
     <div>
       <h2>Simuler un Trade</h2>
       <form onSubmit={handleSubmit}>
@@ -95,6 +107,7 @@ const TradeForm = () => {
         <button>Retour à l'accueil</button>
       </Link>
     </div>
+    </SelectedLayout>
   );
 };
 

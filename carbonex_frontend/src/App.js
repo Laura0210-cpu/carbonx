@@ -31,7 +31,7 @@ function App() {
     return <div> loading...</div> 
   }
   // Define routes where the Navbar should not be shown
-  const noNavbarRoutes = [ '/protected', '/appwelcome', '/projets', '/test-layout', '/mes-projets', '/rapports', ];
+  const noNavbarRoutes = [ '/protected', '/appwelcome', '/projets', '/test-layout', '/mes-projets', '/rapports', '/trade',];
 
   // Check if the current route is in the list of noNavbarRoutes
   const hideNavbar = noNavbarRoutes.includes(location.pathname)|| 
@@ -60,7 +60,7 @@ function App() {
         <Route path ="/rapports" element ={<ReportSeller/> } />
         <Route path="/blog" element={<BlogPage/> } /> 
         <Route path = "/contact" element ={<ContactForm />} />
-        <Route path = "/trade" element ={<TradeForm />} />
+        <Route path = "/trade" element ={<ProtectedRoute><TradeForm /></ProtectedRoute>} />
         
       </Routes>
     </>
