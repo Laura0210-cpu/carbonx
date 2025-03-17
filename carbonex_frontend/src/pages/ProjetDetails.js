@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Layout from "../components/Layout.jsx";
 import { default as SellerLayout } from "../components/LayoutSeller.jsx" ;
@@ -182,9 +182,9 @@ const map ={
         </div>
 
         {/* Trade Button */}
-        <button onClick={handleTrade} disabled={isTrading} style={styles.tradeButton}>
-          {isTrading ? "Trading..." : "Trade"}
-        </button>
+        <Link to={'/trade'} style={styles.tradeButton}>
+          Trade
+        </Link>
       </div>
     </SelectedLayout>
   );
