@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { default as SellerLayout} from '../components/LayoutSeller';
+import { useAuth } from "../context/AuthContext";
+
 const API_URL = process.env.REACT_APP_BACKEND_URL || "https://carbonx-4jbn.onrender.com/api";
 
 
