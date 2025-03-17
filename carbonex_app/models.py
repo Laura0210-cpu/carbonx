@@ -82,34 +82,11 @@ class Project(models.Model):
     ### Il me faut ici:  class Trade(models.Model), il faudrait comme fields; registered_date, trade_it, amount_CO2, amount_nego, 
     ###buyer, seller, project. 
 
+
 class Trade(models.Model):
-    # Automatically record when the trade is registered
-    registered_date = models.DateTimeField(auto_now_add=True)
-    # A trade identifier; this could be set to the blockchain transaction hash,
-    # or a unique trade ID as per your business logic.
-    trade_it = models.CharField(max_length=100, unique=True)
-    # Amount of CO₂ credits traded (adjust max_digits/decimal_places as needed)
-    amount_CO2 = models.DecimalField(max_digits=20, decimal_places=2)
-    # The negotiated amount (for example, in USD, or a discount factor)
-    amount_nego = models.DecimalField(max_digits=20, decimal_places=2)
-    
-    # Buyer and seller are linked to your custom user model
-    buyer = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name="buy_trades"
-    )
-    seller = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name="sell_trades"
-    )
-    # Link this trade to the project it applies to
-    project = models.ForeignKey(
-        'Project',
-        on_delete=models.CASCADE,
-        related_name="trades"
-    )
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    quantity = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Trade {self.trade_it} on {self.project.name} ({self.amount_CO2} CO₂)"
+        return f"Trade #{self.id} - {self.quantity} units @ ${self.price}"
