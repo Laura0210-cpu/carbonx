@@ -39,7 +39,7 @@ const TradeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const total = price * quantity;
-    console.log('Trade simulé', {
+    console.log('Demande de trade envoyé au vendeur', {
       project: selectedProject,
       projectId: selectedProject ? selectedProject.id : null,
       price,
@@ -47,7 +47,7 @@ const TradeForm = () => {
       total,
     });
     alert(
-      `Trade simulé : Projet ${selectedProject ? selectedProject.name : ''} (ID ${selectedProject ? selectedProject.id : ''}), Quantité ${quantity}, Total ${total}`
+      `Demande de trade envoyé au vendeur : Projet ${selectedProject ? selectedProject.name : ''} (ID ${selectedProject ? selectedProject.id : ''}), Quantité ${quantity}, Total ${total}`
     );
   };
   const { user, loading: userLoading } = useAuth(); // assuming you also have a loading state in your Auth context
@@ -72,8 +72,9 @@ const TradeForm = () => {
             id="project"
             value={selectedProject ? selectedProject.id : ''}
             onChange={(e) => {
+              const selectedId = e.target.value;
               const project = projects.find(
-                (p) => p.id === parseInt(e.target.value, 10)
+                (p) => p.id === selectedId
               );
               setSelectedProject(project);
             }}
@@ -102,7 +103,7 @@ const TradeForm = () => {
             onChange={(e) => setQuantity(parseInt(e.target.value, 10) || 0)}
           />
         </div>
-        <button type="submit">Simuler Trade</button>
+        <button type="submit">Envoyer Trade</button>
       </form>
       <br />
       <Link to="/">
